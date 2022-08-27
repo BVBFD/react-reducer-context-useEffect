@@ -9,12 +9,14 @@ const App = () => {
   // ContextAPI
   const context = useContext(Context);
   console.log(context);
-
   return (
     <Routes>
       <Route path={'/'}>
         <Route index element={<Form />} />
         <Route path={'post'} element={<Post />} />
+        <Route path={'users'} element={<Post />}>
+          <Route path={':id'} />
+        </Route>
       </Route>
     </Routes>
   );

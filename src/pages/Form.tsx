@@ -1,4 +1,5 @@
 import React, { useContext, useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Context } from '../Context/Context';
 // import { formReducer, FORM_INITIAL_STATE } from '../Reducers/FormReducer';
@@ -6,6 +7,7 @@ import { Context } from '../Context/Context';
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -49,6 +51,14 @@ const Form = () => {
 
   return (
     <Container>
+      <Link
+        style={{
+          marginBottom: '12px',
+        }}
+        to={'/post'}
+      >
+        Go to Posts
+      </Link>
       <Button onClick={handleClick}>
         <Span>Form</Span>
       </Button>
